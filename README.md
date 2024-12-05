@@ -13,14 +13,14 @@ To brew specific tea flavors it's necessary to initialize tea's base brew (don't
 Debian:
 ``` bash
 sudo apt install docker
-git clone https://github.com/xoanoj/tea && cd tea
+git clone https://github.com/XoanOuteiro/tea && cd tea
 chmod +x init.sh && ./init.sh
 ```
 
 Arch:
 ``` bash
 sudo pacman -Sy docker
-git clone https://github.com/xoanoj/tea && cd tea
+git clone https://github.com/XoanOuteiro/tea && cd tea
 chmod +x init.sh && ./init.sh
 ```
 
