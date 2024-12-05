@@ -1,0 +1,30 @@
+# Start from the Arch Linux base image
+FROM blackarchlinux/blackarch:latest
+
+# Set environment variables for non-interactive installation
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Update the system and install essential packages
+RUN pacman -Syu --noconfirm && \
+    pacman -S --noconfirm \
+    git \
+    base-devel \
+    curl \
+    wget \
+    python \
+    python-pip \
+    zsh \
+    vim \
+    ruby \
+    rust \
+    && pacman -Scc --noconfirm
+
+# Clean up package cache to reduce image size
+RUN pacman -Scc --noconfirm
+
+# Set working directory (optional)
+WORKDIR /pentest
+
+# Default command
+CMD ["/bin/zsh"]
+
