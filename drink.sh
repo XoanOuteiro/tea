@@ -6,6 +6,9 @@
 #
 #
 
+#Print a logo
+cat ./misc/logo_bearcup
+
 # Check if a flavor argument was provided
 if [ -z "$1" ]; then
   echo "Usage: $0 <flavor_name>"
@@ -21,7 +24,7 @@ IMAGE_EXISTS=$(docker images -q "$IMAGE_NAME")
 
 # If the image does not exist, show available flavors
 if [ -z "$IMAGE_EXISTS" ]; then
-  echo "Image for flavor '$FLAVOR' not found. But you can brew these teas:"
+  echo "Brew for flavor '$FLAVOR' not found. But you can brew these teas:"
   ls ./flavors/
   exit 1
 fi
@@ -31,12 +34,12 @@ CONTAINER_EXISTS=$(docker ps -a -q -f name="$CONTAINER_NAME")
 
 if [ -z "$CONTAINER_EXISTS" ]; then
   # If the container does not exist, create and start it
-  echo "Container for flavor '$FLAVOR' not found. Creating and starting container..."
+  echo "Tea for flavor '$FLAVOR' not found. Creating and starting container..."
   docker run -it --name "$CONTAINER_NAME" --hostname "$FLAVOR" "$IMAGE_NAME" zsh
-  echo "Container '$CONTAINER_NAME' started."
+  echo "Tea '$CONTAINER_NAME' started."
 else
   # If the container exists, start it and attach to it
-  echo "Container for flavor '$FLAVOR' already exists. Starting and attaching..."
+  echo "Tea for flavor '$FLAVOR' already exists. Starting and attaching..."
   docker start "$CONTAINER_NAME"
   docker attach "$CONTAINER_NAME"
 fi

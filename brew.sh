@@ -6,6 +6,9 @@
 #
 #
 
+#Print a logo
+cat ./misc/logo_redstraw_nocap
+
 # Check if a flavor argument was provided
 if [ -z "$1" ]; then
   echo "Usage: $0 <flavor_name>"
