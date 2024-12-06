@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#
+#
+# -- Drink (Starter) handler
+#
+#
+
 # Check if a flavor argument was provided
 if [ -z "$1" ]; then
   echo "Usage: $0 <flavor_name>"
