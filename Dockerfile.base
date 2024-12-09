@@ -15,8 +15,12 @@ RUN pacman -Syu --noconfirm && \
     python-pip \
     zsh \
     vim \
+    nano \
+    net-tools \
     ruby \
     rust \
+    fastfetch \
+    yay \
     && pacman -Scc --noconfirm
 
 # Clean up package cache to reduce image size
