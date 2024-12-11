@@ -56,3 +56,4 @@ As long as you don't delete your container, you can start and attach it again ju
 | Flavor | Focus |
 | --- | --- |
 | sencha | Demonstrates Tea's usage, but doesn't install any tools apart from the ones that the base brew uses |
+| genmaicha | General tools for DNS enumeration and subdomain discovery, mostly passive methodologies |
