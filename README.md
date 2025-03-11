@@ -1,6 +1,20 @@
 # Tea
 A collection of Arch Dockerfiles to build specialized Recon, OSINT & Pentesting containers, simplified through a custom launcher built with Bash Scripts.
 
+## Legal & Ethical Considerations
+Using Tea containers to interact with unauthorized systems is illegal and unethical. This tool is meant solely for educational and research purposes within controlled environments where you have explicit permission. Acceptable use cases include:
+
+- CTF Challenges
+- Security Research
+- Penetration Testing & Red Teaming Engagements (with proper authorization)
+- Ethical Hacking scenarios where any parties involved consent to its use
+
+Unauthorized use of Tea and its containers may violate cybercrime laws, including but not limited to the Computer Fraud and Abuse Act (CFAA) and General Data Protection Regulation (GDPR). Misuse can lead to legal consequences, including criminal charges and civil liability.
+
+Additionally, improper use of Tea containers could pose serious security risks, including data breaches and full-system compromise. Deploying this tool on unsecured networks, personal devices, or any unauthorized environment could expose you to threats beyond your control.
+
+By using Tea and any related Docker Image and Container, you agree to use them ethically and legally. You take full responsibility for how this tool is used. This tool must never be used for unauthorized access, military applications or unlawful financial gain.
+
 ## Using Tea
 Using a tea requires 2 simplified steps:
 
