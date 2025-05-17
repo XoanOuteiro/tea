@@ -1,0 +1,5 @@
++-----------------------------------------------------------------------------------------------------+
+| Sencha - 煎茶                                                                                       |
+| [A common type japanese green tea]                                                                  |
+| Demonstrates Tea's usage, but doesn't install any tools apart from the ones that the base brew uses |
++-----------------------------------------------------------------------------------------------------+

@@ -1,0 +1,5 @@
++----------------------------------------------------------------------------------------------+
+| Genmaicha - 玄米茶                                                                           |
+| [Green tea mixed with roasted popped brown rice]                                             |
+| General tools for DNS enumeration and subdomain discovery, focusing on passive methodologies |
++----------------------------------------------------------------------------------------------+
