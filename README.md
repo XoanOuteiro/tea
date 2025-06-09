@@ -1,5 +1,5 @@
 # Tea
-A collection of Arch Dockerfiles to build specialized Recon, OSINT & Pentesting containers, simplified through a custom launcher built with Bash Scripts.
+A collection of Arch Dockerfiles to build specialized Recon, OSINT & Pentesting containers, simplified through the teashop custom launcher built with Rust.
 
 ## Legal & Ethical Considerations
 Using Tea containers to interact with unauthorized systems is illegal and unethical. This tool is meant solely for educational and research purposes within controlled environments where you have explicit permission. Acceptable use cases include:
@@ -16,26 +16,25 @@ Additionally, improper use of Tea containers could pose serious security risks, 
 By using Tea and any related Docker Image and Container, you agree to use them ethically and legally. You take full responsibility for how this tool is used. This tool must never be used for unauthorized access, military applications or unlawful financial gain.
 
 ## Using Tea
-Using a tea requires 2 simplified steps:
-
-- Brewing tea (Building an specific flavor's Docker Images)
-- Drinking tea (Creating, starting and attaching to a container)
+The tea framework is used through the teashop binary. It allows the user to instance and access their tea brews at any time using the ~/.tea directory as the flavors database.
 
 ## Brewing Tea
-To brew specific tea flavors it's necessary to initialize tea's base brew (don't worry, this only needs to be done once), this can be done through:
+To brew specific tea flavors it's necessary to initialize tea's base brew, this is done automatically by the install.sh script. If you ever delete your tea:base image you will need to clone the repository again and run the init.sh script manually.
+
+Installation is done via:
 
 Debian:
 ``` bash
 sudo apt install docker
 git clone https://github.com/XoanOuteiro/tea && cd tea
-chmod +x init.sh && ./init.sh
+chmod +x install.sh && ./install.sh
 ```
 
 Arch:
 ``` bash
 sudo pacman -Sy docker
 git clone https://github.com/XoanOuteiro/tea && cd tea
-chmod +x init.sh && ./init.sh
+chmod +x install.sh && ./install.sh
 ```
 
 This process should not have any errors, if it does please open an issue.
@@ -45,26 +44,39 @@ You can check for tea's basic image using:
 docker images | grep tea
 ```
 
-If you have tea's base image, you can start brewing specific flavors:
+## Using teashop
+When the install process is finished your system will have the teashop binary. You can access it at any time using:
 
 ``` bash
-chmod +x brew.sh
-./brew.sh [flavor]
+teashop
 ```
 
-## Drinking Tea
-Once your flavor has been brewed, you can drink it using:
+Teashop is extremely simple and has only 4 commands:
 
+Seeing all available options:
 ``` bash
-chmod +x drink.sh
-./drink.sh [brew]
+teashop help
 ```
-
-As long as you don't delete your container, you can start and attach it again just by doing the exact same command:
-
+Seeing all available flavors:
 ``` bash
-./drink.sh [brew]
+teashop flavors
 ```
+
+Seeing all available brews:
+``` bash
+teashop brews
+```
+
+Creating a brew:
+``` bash
+teashop brew <flavor>
+```
+
+Drinking a brew:
+``` bash
+teashop drink <flavor>
+```
+
 ## Tea Flavors
 
 | Flavor | Focus |
@@ -73,3 +85,6 @@ As long as you don't delete your container, you can start and attach it again ju
 | genmaicha | General tools for DNS enumeration and subdomain discovery, mostly passive methodologies |
 | gyokuro | Web-Recon, includes crawling tools, fuzzers, DNS recon and Subdomain enum tools |
 | hojicha | General tools for host-pentesting on local networks |
+
+## Creating flavors
+Simply create a folder under ~/.tea/flavors/ with your desired flavor name, then, add a Dockerfile using Sencha's flavor dockerfile as a base and add tools and configurations as needed. You may also add a description.txt file to be displayed when using the flavors listing.
